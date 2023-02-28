@@ -25,4 +25,11 @@ public class KafkaConfig {
    public KafkaTemplate<String, String> kafkaTemplate() {
       return new KafkaTemplate<>(producerFactory());
    }
+
+
+   @Autowired
+   public KafkaTemplate<String, String> kafkaTemplate;
+   public void send(String message) {
+   kafkaTemplate.send("user-plans", message);
+   }
 }

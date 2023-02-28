@@ -25,4 +25,9 @@ public class ProcessmsApplication {
    		System.out.println("Received Messasge in login - group-id: " + message);
 	}
 
+	@KafkaListener(topics = "user-plans", groupId = "group-id")
+	public void loginListen(String message) {
+   		System.out.println("Received Messasge in login - group-id: " + message);
+	}
+
 }

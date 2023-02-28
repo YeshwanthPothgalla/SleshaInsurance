@@ -28,6 +28,22 @@ public class UserPlansController {
         return new ResponseEntity<>(service.findAllByEmailId(emailId),HttpStatus.OK);
     }
 
-    
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
+//     @GetMapping("/user-plans")
+//     public ResponseEntity<List<UserPlan>> getUserPlans() {
+//     // ... get user plans from database
+//     // Send message to Kafka topic
+//     for (UserPlan userPlan : userPlans) {
+//         String message = userPlan.toString();
+//         kafkaTemplate.send("user-plans", message);
+//     }
+
+//     return ResponseEntity.ok(userPlans);
+// }
 
 }
+
+    
+
